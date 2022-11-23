@@ -1,0 +1,20 @@
+server:
+  port: 10010 #网关的端口
+spring:
+  application:
+    name: gatewayServer #服务名称
+  cloud:
+    gateway:
+      routes:
+        - id: address-service #当前路由规则的id （唯一表示） 自定义的
+          uri: lb://addressServer #lb是负载均衡的缩写，后面更上具体的注册中心上的服务名称
+          predicates:
+            - Path=/address/** #路由的规则
+        - id: classesServer
+          uri: lb://classesServer
+          predicates:
+            - Path=/classes/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka/

@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+  application:
+      name: studentServer #???????
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud_student?serverTimezone=GMT&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  type-aliases-package:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: com/jingrui/student_manage/mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka/
+userServer:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule # 配置负载均衡
+ribbon:
+  eager-load:
+    enabled: true  #开启饥饿加载，在服务启动的时候去拉去对应的服务
+    clients: userServer #正对指定的服务开启饥饿加载

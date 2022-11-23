@@ -1,0 +1,5 @@
+com\cloud\pojo\Address.class
+com\cloud\config\FeignClientConfiguration.class
+com\cloud\client\AddressClient.class
+com\cloud\client\ClassesClient.class
+com\cloud\pojo\Classes.class

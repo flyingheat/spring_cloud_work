@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.address.address_manage.mapper.AddressMapper">
+
+    <resultMap id="cityVo" type="com.address.address_manage.pojo.Address">
+
+        <id column="id" property="id"></id>
+
+        <result column="cname" property="cName"></result>
+        <result column="pid" property="pid"></result>
+
+    </resultMap>
+    <!--<select id="findCityById" resultMap="cityVo">
+
+        select * from city where pid = #{pid}
+
+    </select>-->
+
+    <!--<select id="getSheng" resultType="java.lang.String" parameterType="integer">
+
+        select cname from city where id = #{shid}
+
+    </select>-->
+
+<!--    <select id="getShi" resultType="String" parameterType="integer">
+
+        select cname from city where id = #{shId}
+
+    </select>-->
+   <!-- <select id="getQu" resultType="String" parameterType="integer">
+
+        select cname from city where id = #{qid}
+
+    </select>-->
+
+</mapper>
